@@ -1,4 +1,4 @@
-// acquire references to page elements
+// acquire referen  ces to page elements
 var nameSpan = document.querySelector('span')
 var formEl = document.querySelector('form')
 var clear = document.querySelector('#clear')
@@ -12,7 +12,11 @@ formEl.onsubmit = function(e) {
   // prevents form submission
   e.preventDefault()
   // save name element's content to cookies
-  // save textarea's content to localstorage
+
+    nameSpan = document.cookie
+    // save textarea's content to localstorage
+    textarea = localStorage
+    console.log(textarea)
   // YOUR CODE HERE
 
   // triggers thumbs up animation
@@ -21,7 +25,9 @@ formEl.onsubmit = function(e) {
 
 clear.onclick = function() {
   // Clear textarea's value
-  // Clear localstorage's content
+    textarea.value = '';
+    // Clear localstorage's content
+    localStorage.value = '';
   // YOUR CODE HERE
 
   // triggers thumbs up animation
