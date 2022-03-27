@@ -5,18 +5,33 @@ var clear = document.querySelector('#clear')
 var textarea = document.querySelector('textarea')
 
 // Retrieve name and note content from cookies and localstorage
+var note = localStorage.getItem('first')
+var name = document.cookie
+
+console.log(name)
+console.log(note)
+
 // Then apply them to elements on the page
+
+document.getElementById("notes-area").innerHTML = note;
+
+document.querySelector("span").innerHTML = name;
+console.log(name)
 // YOUR CODE HERE
+
 
 formEl.onsubmit = function(e) {
   // prevents form submission
   e.preventDefault()
-  // save name element's content to cookies
-
-    nameSpan = document.cookie
+    // save name element's content to cookies
+        document.cookie = nameSpan.textContent
+   
     // save textarea's content to localstorage
-    textarea = localStorage
-    console.log(textarea)
+
+   
+    textarea.textContent = textarea.value + " "
+    localStorage.setItem ('first', textarea.value)
+
   // YOUR CODE HERE
 
   // triggers thumbs up animation
@@ -27,7 +42,7 @@ clear.onclick = function() {
   // Clear textarea's value
     textarea.value = '';
     // Clear localstorage's content
-    localStorage.value = '';
+    storage.clear();
   // YOUR CODE HERE
 
   // triggers thumbs up animation
